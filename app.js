@@ -1,3 +1,19 @@
+// Login Screen
+const defaultPasscode = '206102';
+
+function checkPasscode() {
+  const passcodeInput = document.getElementById('passcode-input');
+  const errorMessage = document.getElementById('error-message');
+  const passcode = passcodeInput.value;
+
+  if (passcode === defaultPasscode ) {
+    // Hide login screen and show start screen 
+    document.getElementById('login-screen').style.display = "none";
+    document.getElementById('start-page').style.display = "block";
+  } else {
+    errorMessage.innerHTML = "Incorrect passcode. Please try again.";
+  }
+}
 // Main section switched
 function showSection(sectionId) {
   const startPage = document.getElementById('start-page');
