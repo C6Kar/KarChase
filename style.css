@@ -18,6 +18,94 @@ body {
   user-select: none;
 }
 
+/* Log-in Screen*/
+.login-container {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  background-color: #050A2C;
+}
+
+.login-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form h3 {
+  color: var(--color-txt);
+  font-size: 32px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.login-form h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--yellow);
+}
+
+input.pass-input {
+  width: 250px;
+  height: 50px;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--yellow);
+  font-family: 'Chakra Petch', sans-serif;
+  text-align: center;
+  outline: none;
+  border: 2px solid #ffd700;
+  background-color: var(--bg-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#error-message {
+  color: var(--red);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+button.login {
+  outline: none;
+  border: 5px solid #ffd700;
+  background-color: #ffd700;
+  width: 520px;
+  height: 90px;
+  padding: 20px 0;
+  border-radius: 30px;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #050A2C;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.login-container p {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .img-container {
   position: relative;
   display: flex;
