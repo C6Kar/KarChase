@@ -4,8 +4,8 @@ const filesToCache = [
   '/index.html',
   '/styles.css',
   '/app.js',
-  '/assets/karchase1.png',
-  '/assets/karchase2.png'
+  '/Assets/karchase1.png',
+  '/Assets/karchase2.png'
 ];
 
 self.addEventListener('install', e => {
