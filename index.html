@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#050a2c">
+  </meta>
+</head>
+
+<body>
+  <!-- Start page -->
+  <section id="start-page">
+    <div class="img-container">
+      <img src="Assets/Karchaselogo.svg" />
+    </div>
+    <div class="text">
+      <h3>Welcome to</h3>
+      <h1>KarChase</h1>
+      <h2>
+        Your Personal Life Tracker
+      </h2>
+    </div>
+    <div class="start-btn">
+      <button onclick="showSection('dashboard')" class="start-btn">let's start</button>
+    </div>
+    <p>
+      © KAR PRODUCTIONS
+    </p>
+  </section>
+
+  <!-- Main sections Navigation bar -->
+
+  <nav class="navigation-bar" id="main-nav" style="display:none">
+    <ul class="nav-menu">
+      <li><button onclick="showSection('dashboard')">Dashboard</button></li>
+      <li><button onclick="showSection('journal')">Journal</button></li>
+      <div class="spider">
+        <button onclick="showSection('profile')"><img src="Assets/spider.svg" /></button>
+      </div>
+      <li><button onclick="showSection('toDoList')">To-Do List</button></li>
+      <li><button onclick="showSection('games')">Games</button></li>
+    </ul>
+  </nav>
+
+  <!-- Main Sections -->
+  <main id="main-container" style="display:none">
+    <section id="dashboard" style="display:none">
+      <div class="greeting">
+        <h1>Good <span>Evening</span></h1>
+        <h2>Karissa</h2>
+      </div>
+
+      <div id="week-cards" class="date-card-container"></div>
+
+      <h3>Daily Snapshot</h3>
+
+      <div id="card-stack" class="category-folder">
+        <!-- Work Category -->
+        <div class="card active" id="card-work" data-category="work"
+          style="--card-color: #1A2254; --text-color: #ffd700" data-z="4">
+          <div class="task-cat work">
+            <div class="task-category">Work</div>
+          </div>
+          <div class="card-info work">
+            <div class="task-header">
+              <div class="total-tasks"><span id="totalTasks-work"></span></div>
+              <h2><span id="categoryName-work">Work</span></h2>
+              <div class="task-icon">
+                <!-- Work icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffd700" class="size-6">
+                  <!-- SVG PATH -->
+                </svg>
+              </div>
+            </div>
+            <div class="progress-line">
+              <label style="--text-color: #ffd700">Completed:</label>
+              <div class="progressbar-container">
+                <div id="completed-bar-work" class="progress-fill"></div>
+              </div>
+              <span id="completed-percent-work">0%</span>
+            </div>
+            <div class="progress-line">
+              <label>In Progress:</label>
+              <div class="progressbar-container">
+                <div id="pending-bar-work" class="progress-fill pending"></div>
+              </div>
+              <span id="pending-percent-work">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Category -->
+        <div class="card" id="card-learning" data-category="learning"
+          style="--card-color: #ffd700; --text-color: #fe0000" data-z="3">
+          <div class="task-cat learning">
+            <div class="task-category">Learning</div>
+          </div>
+          <div class="card-info learning">
+            <div class="task-header">
+              <div class="total-tasks"><span id="totalTasks-learning"></span></div>
+              <h2><span id="categoryName-learning">Learning</span></h2>
+              <div class="task-icon">
+                <!-- Learning icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fe0000" class="size-6">
+                  <!-- SVG PATH -->
+                </svg>
+              </div>
+            </div>
+            <div class="progress-line">
+              <label>Completed:</label>
+              <div class="progressbar-container">
+                <div id="completed-bar-learning" class="progress-fill"></div>
+              </div>
+              <span id="completed-percent-learning">0%</span>
+            </div>
+            <div class="progress-line">
+              <label>In Progress:</label>
+              <div class="progressbar-container">
+                <div id="pending-bar-learning" class="progress-fill pending"></div>
+              </div>
+              <span id="pending-percent-learning">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- School Category -->
+        <div class="card" id="card-school" data-category="school" style="--card-color: #fe0000; --text-color: #ffd700"
+          data-z="2">
+          <div class="task-cat school">
+            <div class="task-category">School</div>
+          </div>
+          <div class="card-info school">
+            <div class="task-header">
+              <div class="total-tasks"><span id="totalTasks-school"></span></div>
+              <h2><span id="categoryName-school">School</span></h2>
+              <div class="task-icon">
+                <!-- School icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffd700" class="size-6">
+                  <!-- SVG PATH -->
+                </svg>
+              </div>
+            </div>
+            <div class="progress-line">
+              <label>Completed:</label>
+              <div class="progressbar-container">
+                <div id="completed-bar-school" class="progress-fill"></div>
+              </div>
+              <span id="completed-percent-school">0%</span>
+            </div>
+            <div class="progress-line">
+              <label>In Progress:</label>
+              <div class="progressbar-container">
+                <div id="pending-bar-school" class="progress-fill pending"></div>
+              </div>
+              <span id="pending-percent-school">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Category -->
+        <div class="card" id="card-personal" data-category="personal"
+          style="--card-color: #1A2254; --text-color: #fe0000" data-z="1">
+          <div class="task-cat personal">
+            <div class="task-category">Personal</div>
+          </div>
+          <div class="card-info personal">
+            <div class="task-header">
+              <div class="total-tasks"><span id="totalTasks-personal"></span></div>
+              <h2><span id="categoryName-personal">Personal</span></h2>
+              <div class="task-icon">
+                <!-- Personal icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fe0000" class="size-6">
+                  <!-- SVG PATH -->
+                </svg>
+              </div>
+            </div>
+            <div class="progress-line">
+              <label>Completed:</label>
+              <div class="progressbar-container">
+                <div id="completed-bar-personal" class="progress-fill"></div>
+              </div>
+              <span id="completed-percent-personal">0%</span>
+            </div>
+            <div class="progress-line">
+              <label>In Progress:</label>
+              <div class="progressbar-container">
+                <div id="pending-bar-personal" class="progress-fill pending"></div>
+              </div>
+              <span id="pending-percent-personal">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--<section id="profile" style="display:none">
+            <div class="Spider-Man">
+                <img src="Assets/Spider-Man.svg" />
+              </div>
+            <div class="content">
+                <div class="info">
+                    <div class="profile">
+                        <img src="Assets/Knoxprofile.png" />
+                      </div>
+                    <div class="info-text">
+                        <h1>Hi! It's <span>Lian Knox</span></h1>
+                        <h2>I'm a <span class="typing"><span></span></span></h2>
+                        <p>你好！我叫连诺克思。我十七岁和我十二年级。很高兴认识你！！！</p>
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="#"><img src="Assets/GitHub.svg" /></a></li>
+                                <li><a href="#"><img src="Assets/garena.svg" /></a></li>
+                                <li><a href="#"><img src="Assets/x.svg" /></a></li>
+                                <li><a href="#"><img src="Assets/Subtract.svg" /></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+    </section>-->
+    <section id="toDoList" style="display:none">
+      <div class="container">
+        <div class="header">
+          <h5>Task List</h5>
+          <h1><span class="category">Work</span></h1>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+              stroke="#fe0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-clipboard-list-icon lucide-clipboard-list">
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <path d="M12 11h4" />
+              <path d="M12 16h4" />
+              <path d="M8 11h.01" />
+              <path d="M8 16h.01" />
+            </svg>
+          </div>
+          <div class="row">
+            <div class="text-container">
+              <input type="text" id="add-text" placeholder="Enter a Task..." />
+              <input type="date" id="add-date" />
+            </div>
+            <div class="btn-container">
+              <button onclick="addTask()">Add</button>
+            </div>
+          </div>
+        </div>
+        <div class="list-container">
+          <ul id="list-section">
+            <!--<li class="checked">Task 1</li>
+        	<li>Task 2</li>
+        	<li>Task 3</li>-->
+          </ul>
+        </div>
+      </div>
+      <div class="bar-container close">
+        <div class="bar-contents">
+          <ul class="category-links">
+            <li class="nav-links" data-category="work">
+              <button onclick="showCategory('work')">
+                <div class="items">
+                  <h2>W</h2>
+                </div>
+              </button>
+            </li>
+            <li data-category="learning">
+              <button onclick="showCategory('learning')">
+                <div class="items">
+                  <h2>L</h2>
+                </div>
+              </button>
+            </li>
+            <li data-category="school">
+              <button onclick="showCategory('school')">
+                <div class="items">
+                  <h2>S</h2>
+                </div>
+              </button>
+            </li>
+            <li data-category="personal">
+              <button onclick="showCategory('personal')">
+                <div class="items">
+                  <h2>P</h2>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="games">
+      <div class="hd-div" id="games-screen">
+        <div class="games-img">
+          <div class="img-content">
+            <h2>KARCADE</h2>
+            <h5>"Fuel your games with KarChase!"</h5>
+          </div>
+        </div>
+        <div class="sudoku-gm">
+          <div class="sudoku-info">
+            <h3>Sudoku</h3>
+            <div class="gm-btn">
+              <button onclick="showSudoku()">Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sudoku-container" id="sudoku-container" style="display: none">
+        <section id="sudoku">
+          <nav>
+            <div class="gm-nav-container">
+              <div class="spider">
+                <button onclick="goBack()" type="button">
+                  <img src="Assets/spider.svg" alt="Spider Logo" />
+                </button>
+              </div>
+              <a href="#" class="nav-logo">Sudoku</a>
+            </div>
+          </nav>
+
+          <main class="gm-main">
+            <div class="gm-screen">
+              <!-- Start Screen -->
+              <div class="gm-start-screen active" id="gm-start-screen">
+                <div class="diff active">
+                  <h2>Choose Difficulty</h2>
+                  <button class="btn" id="btn-easy-lvl" type="button">EASY</button>
+                  <button class="btn" id="btn-medium-lvl" type="button">MEDIUM</button>
+                  <button class="btn" id="btn-hard-lvl" type="button">HARD</button>
+                </div>
+
+                <div id="time" style="display: none">
+                  <h2>Choose Time</h2>
+                  <button class="btn" id="btn-time-1" type="button">5 MINS</button>
+                  <button class="btn" id="btn-time-2" type="button">10 MINS</button>
+                  <button class="btn" id="btn-time-3" type="button">15 MINS</button>
+                </div>
+
+                <div class="divider"></div>
+
+                <button class="btn" id="btn-continue" type="button">Continue</button>
+                <button class="btn btn-yellow" id="btn-play" type="button">New Game</button>
+              </div>
+
+              <!-- Game Screen -->
+              <div class="main-game" id="game-screen">
+                <div id="board"></div>
+
+                <div class="main-game-info">
+                  <span id="game-level">Easy</span>
+                  <span class="timer" id="game-timer"></span>
+                </div>
+
+                <div id="number-container">
+                  <div class="number">1</div>
+                  <div class="number">2</div>
+                  <div class="number">3</div>
+                  <div class="number">4</div>
+                  <div class="number">5</div>
+                  <div class="number">6</div>
+                  <div class="number">7</div>
+                  <div class="number">8</div>
+                  <div class="number">9</div>
+                  <div class="delete" id="btn-delete">X</div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+      </div>
+    </section>
+  </main>
+  <section id="calendar-container" style="display: none">
+    <div class="calendar-header">
+      <button id="spider-btn">
+        <div class="spider">
+          <img src="Assets/spider.svg" />
+        </div>
+      </button>
+      <div class="month-year">
+        <p id="year"></p>
+        <h1 id="month"></h1>
+      </div>
+      <div class="left-btn">
+        <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+            fill="currentColor" class="size-6">
+            <path fill-rule="evenodd"
+              d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+      <div class="right-btn">
+        <button id="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+            fill="currentColor" class="size-6">
+            <path fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div class="days" id="days-grid">
+    </div>
+  </section>
+</body>
+<script src="app.js"></script>
+
+</html>

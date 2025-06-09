@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "KarChase",
+  "short_name": "KC",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#050a2c",
+  "theme_color": "#050a2c",
+  "description": "KarChase is your all-in-one personal planner! Track tasks, journal moods, plan events, and follow your learning goals in Chinese, design, and coding—all in one fun, animated single-page app. Stay organized, stay inspired, and chase your life goals your way.",
+  "icons": [
+    {
+      "src": "Assets/karchaselogo1.png"
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+    "src": "Assets/karchaselogo2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+    }
+  ]
+}
