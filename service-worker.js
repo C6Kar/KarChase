@@ -2,7 +2,7 @@ const cacheName = 'kar-app-v1';
 const filesToCache = [
   '/',
   '/index.html',
-  '/styles.css',
+  '/style.css',
   '/app.js',
   '/Assets/karchase1.png',
   '/Assets/karchase2.png'
