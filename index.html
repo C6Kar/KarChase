@@ -12,8 +12,25 @@
 </head>
 
 <body>
+  <section id="login-screen">
+    <div class="login-container">
+      <div class="login-img">
+        <img src="Assets/Karchaselogo.svg" />
+      </div>
+      <div class="login-form">
+        <h3>Welcome to</h3>
+        <h1>KarChase</h1>
+        <input type="password" id="passcode-input" placeholder="Enter Passcode" class="pass-input" />
+        <p id="error-message"></p>
+        <button class="login" onclick="checkPasscode()">Login</button>
+      </div>
+      <p>
+      © KAR PRODUCTIONS
+      </p>
+    </div>
+  </section>
   <!-- Start page -->
-  <section id="start-page">
+  <section id="start-page" style="display: none">
     <div class="img-container">
       <img src="Assets/Karchaselogo.svg" />
     </div>
