@@ -1,4 +1,4 @@
-const cacheName = 'kar-app-v2'; // ← increment this when you update files
+const cacheName = 'kar-app-v3'; // ← increment this when you update files
 
 const filesToCache = [
   '/',
